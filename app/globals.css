@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html,
+  body {
+    @apply bg-background text-slate-900;
+  }
+
+  body {
+    @apply antialiased text-lg leading-relaxed;
+  }
+
+  /* Accent only for links; headings stay primary dark */
+  a:not(.btn-primary):not([class*="text-white"]) {
+    @apply text-accent hover:text-accent/80 transition-colors duration-300;
+  }
+}
+
+@layer components {
+  .container-width {
+    @apply mx-auto max-w-6xl px-6;
+  }
+
+  .card {
+    @apply bg-white rounded-2xl shadow-soft border border-slate-100;
+  }
+
+  .section-padding {
+    @apply py-24;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-full bg-accent px-6 py-3 text-sm font-semibold text-white shadow-soft hover:bg-accent/90 hover:text-white transition-all duration-300;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center rounded-full border border-slate-200 bg-white px-6 py-3 text-sm font-semibold text-primary hover:bg-slate-50 transition-all duration-300;
+  }
+
+  .badge {
+    @apply inline-flex items-center gap-2 rounded-full bg-slate-900/90 px-4 py-1.5 text-xs font-medium text-white shadow-lg;
+  }
+
+  .stat-number {
+    @apply text-3xl sm:text-4xl font-semibold text-primary;
+  }
+
+  .stat-label {
+    @apply text-xs font-medium uppercase tracking-wide text-slate-500;
+  }
+
+  /* Fade-in (stagger with delay for successive sections) */
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+  .animate-fade-in-delay-1 { animation-delay: 0.15s; }
+  .animate-fade-in-delay-2 { animation-delay: 0.3s; }
+  .animate-fade-in-delay-3 { animation-delay: 0.45s; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .animate-fade-in,
+    .animate-fade-in-delay-1,
+    .animate-fade-in-delay-2,
+    .animate-fade-in-delay-3 {
+      animation: none;
+      opacity: 1;
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Lightbox overlay animation */
+@keyframes lightboxZoom {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Success message subtle animation */
+.success-message-in {
+  animation: fadeIn 0.5s ease-out, lightboxZoom 0.4s ease-out;
+}
+

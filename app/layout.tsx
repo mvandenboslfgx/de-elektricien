@@ -3,6 +3,7 @@ import { Inter, Montserrat } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { PHONE_DISPLAY, PHONE_E164, TEL_HREF } from "@/lib/company";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -23,7 +24,7 @@ export const metadata: Metadata = {
     template: "%s | De Elektricien"
   },
   description:
-    "Betrouwbare elektricien in Nederland: groepenkast vervangen, storingen verhelpen, nieuwbouw en verlichting. 20+ jaar ervaring, snelle service en transparante prijzen. Vraag nu een vrijblijvende offerte aan.",
+    "Zelfstandig installatiebedrijf voor elektrotechniek: groepenkast, storingen, bekabeling en verlichting. Offerte op maat, vaste prijs per opdracht. Vraag een vrijblijvende offerte aan.",
   keywords: [
     "elektricien",
     "elektrotechniek",
@@ -44,7 +45,7 @@ export const metadata: Metadata = {
     siteName: "De Elektricien",
     title: "De Elektricien | Professionele Elektrotechniek",
     description:
-      "Professionele elektricien voor woningen en bedrijven. 20+ jaar ervaring, snelle service en transparante prijzen. Vraag vandaag nog een offerte aan.",
+      "Elektrotechnische installaties voor woning en bedrijf. Offerte op maat en vaste prijs per opdracht.",
     images: [
       {
         url: "/images/projecten/logo-de-elektricien.png",
@@ -62,7 +63,7 @@ function LocalBusinessJsonLd() {
     "@type": "LocalBusiness",
     name: "De Elektricien",
     url: "https://www.de-elektricien.nl",
-    telephone: "+31 6 58 71 90 11",
+    telephone: PHONE_E164,
     email: "algemeen@de-elektricien.nl",
     address: {
       "@type": "PostalAddress",
@@ -108,10 +109,10 @@ function MobileCallToAction() {
   return (
     <div className="fixed inset-x-0 bottom-0 z-40 block md:hidden">
       <a
-        href="tel:+31658719011"
+        href={TEL_HREF}
         className="flex w-full items-center justify-center bg-accent py-4 text-base font-bold text-white shadow-[0_-4px_20px_rgba(6,182,212,0.4)] transition-colors duration-300 hover:bg-accent/90 hover:text-white"
       >
-        Bel direct +31 6 58 71 90 11
+        Bel direct {PHONE_DISPLAY}
       </a>
     </div>
   );

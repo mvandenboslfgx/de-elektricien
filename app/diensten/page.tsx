@@ -9,11 +9,13 @@ import {
 } from "@/lib/projectImages";
 
 export const metadata: Metadata = {
-  title: "Elektrische diensten: groepenkasten, storingen, nieuwbouw & meer",
+  title:
+    "Elektrotechnische diensten: groepenkast, storingen, bekabeling & verlichting",
   description:
-    "Professionele elektrotechnische diensten: groepenkast vervangen, storingen verhelpen, nieuwbouw en renovatie, verlichting en data-installaties. Vraag een offerte aan.",
+    "Elektrotechnische installaties: groepenkast, storingen, bekabeling en aansluitingen, verlichting, renovatie en nieuwbouw. Offerte op maat, vaste prijs per opdracht.",
   keywords: [
     "elektricien",
+    "elektrotechnische installaties",
     "groepenkast vervangen",
     "storing oplossen",
     "elektrotechniek Nederland"
@@ -22,7 +24,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Diensten | De Elektricien",
     description:
-      "Groepenkast, storingen, nieuwbouw, verlichting en data. Vraag een offerte aan.",
+      "Elektrotechniek voor woning en bedrijf — groepenkast, storingen, bekabeling, verlichting, nieuwbouw.",
     url: "https://www.de-elektricien.nl/diensten"
   }
 };
@@ -93,17 +95,39 @@ export default function DienstenPage() {
             Diensten
           </p>
           <h1 className="font-heading text-3xl font-bold text-primary md:text-4xl">
-            Elektrische diensten voor woning en bedrijf
+            Elektrotechnische diensten voor woning en bedrijf
           </h1>
           <p className="max-w-2xl text-slate-600">
-            De Elektricien is uw partner voor alle elektrotechnische
-            werkzaamheden. Van het vervangen van verouderde groepenkasten tot
-            het oplossen van storingen en het realiseren van complete
-            installaties bij nieuwbouw en renovatie. Altijd met focus op
-            veiligheid, betrouwbaarheid en een nette afwerking.
+            Als zelfstandig installatiebedrijf verzorgen wij elektrotechnische
+            installaties op basis van aangenomen werk: van groepenkast en
+            storingen tot bekabeling, verlichting en complete elektra bij
+            nieuwbouw en renovatie. Wij werken met offerte op maat en vaste prijs
+            per opdracht — gericht op een veilig en deugdelijk eindresultaat.
           </p>
         </div>
       </section>
+
+      <ServiceSection
+        id="elektrotechniek"
+        title="Elektrotechnische installaties"
+        image={fallbackImage(0)}
+      >
+        <>
+          <p>
+            Wij ontwerpen, installeren en onderhouden elektrotechnische
+            installaties voor particuliere en zakelijke opdrachtgevers. Dat
+            omvat onder meer verdeel- en groepenkasten, bekabeling,
+            aardingssystemen, verlichtingscircuits en aansluitingen van
+            apparatuur — steeds conform de geldende NEN-normen en met oog voor
+            veiligheid en toekomstige uitbreidingen.
+          </p>
+          <p>
+            Elke opdracht start met een heldere inventarisatie en een offerte
+            op maat. Zo weet u vooraf wat er wordt geleverd en tegen welke vaste
+            prijs per opdracht, zonder verrassingen achteraf.
+          </p>
+        </>
+      </ServiceSection>
 
       <ServiceSection
         id="groepenkast"
@@ -170,7 +194,7 @@ export default function DienstenPage() {
 
       <ServiceSection
         id="nieuwbouw"
-        title="Nieuwbouw & renovatie installaties"
+        title="Renovatie en nieuwbouw elektra"
         image={nieuwbouwImage}
       >
         <>
@@ -186,7 +210,8 @@ export default function DienstenPage() {
             We vertalen uw wensen naar een praktisch licht- en
             schakelplan, inclusief datapunten en voorzieningen voor bijvoorbeeld
             domotica of laadpunten. Vervolgens verzorgen wij de complete
-            bekabeling, montage van schakelmateriaal, groepenkast en afwerking.
+            bekabeling, het plaatsen en aansluiten van schakelmateriaal, de
+            groepenkast en de nette afwerking van de installatie.
             Daarbij werken we netjes, gestructureerd en altijd volgens de geldende
             normen.
           </p>
@@ -199,11 +224,11 @@ export default function DienstenPage() {
         </>
       </ServiceSection>
 
-      <CTA title="Ook een offerte voor verlichting of data?" />
+      <CTA title="Offerte op maat voor verlichting of bekabeling?" />
 
       <ServiceSection
         id="verlichting"
-        title="Binnen- en buitenverlichting"
+        title="Verlichting installeren"
         image={verlichtingImage}
       >
         <>
@@ -217,7 +242,7 @@ export default function DienstenPage() {
           <p>
             Samen bekijken we hoe de ruimtes worden gebruikt en waar lichtpunten
             het meeste effect hebben. Vervolgens realiseren wij een nette
-            installatie met oog voor detail: strak gemonteerde kabels en buizen,
+            installatie met oog voor detail: strak aangebrachte kabels en buizen,
             correct geplaatste armaturen en slimme schakelingen, bijvoorbeeld met
             bewegingsmelders, schemerschakelaars of dimmers.
           </p>
@@ -231,30 +256,26 @@ export default function DienstenPage() {
       </ServiceSection>
 
       <ServiceSection
-        id="data"
-        title="Data- en netwerkbekabeling"
+        id="bekabeling"
+        title="Bekabeling en aansluitingen"
         image={dataImage}
       >
         <>
           <p>
-            Een stabiel netwerk is onmisbaar voor zowel particuliere als zakelijke
-            gebruikers. Steeds meer apparaten zijn verbonden met internet en een
-            betrouwbare bekabelde verbinding blijft daarbij de basis. De
-            Elektricien verzorgt de aanleg van data- en netwerkbekabeling in
-            woningen, kantoren, winkels en bedrijfshallen.
+            Nette bekabeling en correcte aansluitingen zijn de basis van elke
+            veilige installatie. Wij verzorgen aanleg, vervanging en uitbreiding
+            van krachtstroom- en installatiebekabeling, aansluitingen op
+            groepenkasten en apparatuur, en waar nodig gestructureerde
+            data-/netwerkbekabeling in woningen en bedrijfsruimtes.
           </p>
           <p>
-            We denken mee over de beste locatie voor aansluitpunten, patchkasten
-            en apparatuur, en leggen gestructureerde bekabeling aan die klaar is
-            voor hoge snelheden. Hierbij letten we op nette kabelvoering, correcte
-            afscherming en duidelijke labeling zodat het netwerk ook in de toekomst
-            eenvoudig beheerbaar blijft.
+            Een stabiel netwerk is voor veel klanten even belangrijk: wij leggen
+            data- en netwerkbekabeling aan met nette kabelvoering, correcte
+            afscherming en duidelijke labeling.
           </p>
           <p>
-            Door elektrotechniek en data-infrastructuur te combineren in één
-            totaaloplossing voorkomt u losse kabels en ad-hocoplossingen. U krijgt
-            een professioneel aangelegd netwerk dat klaar is voor intensief gebruik,
-            videoconferencing, domotica en andere moderne toepassingen.
+            Zo krijgt u één degelijke elektrotechnische aansluiting — zonder losse
+            kabels of tijdelijke oplossingen — klaar voor gebruik en uitbreiding.
           </p>
         </>
       </ServiceSection>

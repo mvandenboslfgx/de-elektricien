@@ -1,8 +1,10 @@
 import Link from "next/link";
 import Image from "next/image";
+import { PHONE_DISPLAY, TEL_HREF, WHATSAPP_URL } from "@/lib/company";
 
 const navItems = [
   { href: "/", label: "Home" },
+  { href: "/over-ons", label: "Over ons" },
   { href: "/diensten", label: "Diensten" },
   { href: "/galerij", label: "Galerij" },
   { href: "/reviews", label: "Reviews" },
@@ -30,42 +32,47 @@ export default function Header() {
                 De Elektricien
               </span>
               <span className="text-xs text-slate-500">
-                Sterk in elektrotechniek
+                Elektrotechnische installaties
               </span>
             </div>
           </div>
         </Link>
 
-        <nav className="hidden items-center gap-6 text-sm font-medium text-slate-700 md:flex">
+        <nav className="hidden items-center gap-4 text-sm font-medium text-slate-700 lg:flex">
           {navItems.map((item) => (
             <Link
               key={item.href}
               href={item.href as any}
-              className="rounded-full px-3 py-1.5 text-sm text-slate-700 transition-colors duration-300 hover:bg-accent/10 hover:text-accent"
+              className="rounded-full px-2.5 py-1.5 text-sm text-slate-700 transition-colors duration-300 hover:bg-accent/10 hover:text-accent"
             >
               {item.label}
             </Link>
           ))}
         </nav>
 
-        <div className="hidden items-center gap-3 md:flex">
+        <div className="hidden items-center gap-2 md:flex">
           <a
-            href="tel:+31658719011"
-            className="text-sm font-semibold text-accent"
+            href={WHATSAPP_URL}
+            target="_blank"
+            rel="noreferrer"
+            className="hidden text-sm font-medium text-slate-600 hover:text-accent lg:inline"
           >
-            +31 6 58 71 90 11
+            WhatsApp
+          </a>
+          <a href={TEL_HREF} className="text-sm font-semibold text-accent">
+            {PHONE_DISPLAY}
           </a>
           <Link
             href="/contact"
             className="btn-primary whitespace-nowrap rounded-full text-xs"
           >
-            Vraag offerte aan
+            Offerte aanvragen
           </Link>
         </div>
 
-        <div className="flex items-center gap-3 md:hidden">
+        <div className="flex items-center gap-2 md:hidden">
           <a
-            href="tel:+31658719011"
+            href={TEL_HREF}
             className="rounded-full bg-accent px-3 py-1.5 text-xs font-semibold text-white shadow-soft"
           >
             Bel direct
@@ -75,4 +82,3 @@ export default function Header() {
     </header>
   );
 }
-

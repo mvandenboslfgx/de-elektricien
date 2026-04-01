@@ -1,28 +1,28 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Privacybeleid",
+  title: "Privacyverklaring",
   description:
     "Lees hoe De Elektricien omgaat met uw persoonsgegevens volgens de AVG: welke gegevens we verwerken, voor welke doeleinden en welke rechten u heeft.",
   keywords: [
     "elektricien",
-    "privacybeleid",
+    "privacyverklaring",
     "AVG",
     "persoonsgegevens",
-    "elektrotechniek Nederland"
+    "Nederland"
   ],
   alternates: {
-    canonical: "/privacybeleid"
+    canonical: "/privacyverklaring"
   },
   openGraph: {
-    title: "Privacybeleid | De Elektricien",
+    title: "Privacyverklaring | De Elektricien",
     description:
-      "In ons privacybeleid leest u welke persoonsgegevens wij verwerken, met welke doelen en welke rechten u heeft volgens de AVG.",
-    url: "https://www.de-elektricien.nl/privacybeleid"
+      "In onze privacyverklaring leest u welke persoonsgegevens wij verwerken, met welke doelen en welke rechten u heeft volgens de AVG.",
+    url: "https://www.de-elektricien.nl/privacyverklaring"
   }
 };
 
-export default function PrivacybeleidPage() {
+export default function PrivacyverklaringPage() {
   return (
     <section className="section-padding">
       <div className="container-width space-y-8">
@@ -31,10 +31,10 @@ export default function PrivacybeleidPage() {
             Privacy
           </p>
           <h1 className="font-heading text-3xl font-bold text-primary md:text-4xl">
-            Privacybeleid De Elektricien
+            Privacyverklaring De Elektricien
           </h1>
           <p className="max-w-3xl text-slate-600">
-            In dit privacybeleid leggen wij uit welke persoonsgegevens wij
+            In deze privacyverklaring leggen wij uit welke persoonsgegevens wij
             verwerken, waarom we dat doen en welke rechten u heeft. De
             Elektricien gaat zorgvuldig en vertrouwelijk met uw gegevens om,
             conform de geldende privacywetgeving (AVG).
@@ -53,7 +53,7 @@ export default function PrivacybeleidPage() {
             <ul className="list-disc space-y-1 pl-5 text-sm md:text-base">
               <li>De Elektricien</li>
               <li>E-mail: algemeen@de-elektricien.nl</li>
-              <li>Telefoon: +31 6 58719011</li>
+              <li>Telefoon: 06-16538949</li>
               <li>Vestigingsplaats: Oud-Beijerland</li>
             </ul>
           </section>
@@ -80,7 +80,7 @@ export default function PrivacybeleidPage() {
               Bij uitvoering van werkzaamheden
             </h3>
             <ul className="list-disc space-y-1 pl-5 text-sm md:text-base">
-              <li>Technische gegevens van de installatie</li>
+              <li>Project- en werkopdrachtgegevens</li>
               <li>Administratie- en factuurgegevens</li>
             </ul>
             <h3 className="font-semibold text-primary">
@@ -102,7 +102,7 @@ export default function PrivacybeleidPage() {
             <ul className="list-disc space-y-1 pl-5 text-sm md:text-base">
               <li>Het beantwoorden van vragen</li>
               <li>Het opstellen en versturen van offertes</li>
-              <li>Het uitvoeren van elektrotechnische werkzaamheden</li>
+              <li>Het uitvoeren van overeengekomen elektrotechnische werkzaamheden</li>
               <li>Klantenadministratie en facturatie</li>
               <li>Verbetering van onze website en service</li>
               <li>Het voldoen aan wettelijke verplichtingen</li>
@@ -138,8 +138,8 @@ export default function PrivacybeleidPage() {
               <li>Offerte- en contactformuliergegevens: maximaal 12 maanden</li>
               <li>Factuur- en financiële gegevens: 7 jaar (wettelijke verplichting)</li>
               <li>
-                Installatiegegevens: zolang deze relevant zijn voor onderhoud of
-                service
+                Projectgegevens: zolang deze relevant zijn voor garantie of
+                nazorg
               </li>
             </ul>
           </section>
@@ -258,4 +258,3 @@ export default function PrivacybeleidPage() {
     </section>
   );
 }
-

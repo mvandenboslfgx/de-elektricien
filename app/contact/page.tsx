@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
+import { PHONE_DISPLAY, TEL_HREF, WHATSAPP_URL } from "@/lib/company";
 
 type FormState = {
   naam: string;
@@ -115,12 +116,12 @@ export default function ContactPage() {
               Contact
             </p>
             <h1 className="font-heading text-3xl font-bold text-primary md:text-4xl">
-              Vraag een offerte aan
+              Offerte aanvragen
             </h1>
             <p className="max-w-xl text-slate-600">
-              Laat hieronder uw gegevens en een korte beschrijving van uw vraag
-              of project achter. Wij werken door heel Nederland en nemen zo snel
-              mogelijk contact met u op om de mogelijkheden te bespreken.
+              Laat uw gegevens en een korte omschrijving van de werkzaamheden
+              achter. Wij reageren met een offerte op maat — met vaste prijs per
+              opdracht waar mogelijk. Wij werken door heel Nederland.
             </p>
           </div>
 
@@ -262,7 +263,7 @@ export default function ContactPage() {
                 disabled={isSubmitting}
                 className="btn-primary inline-flex rounded-full disabled:cursor-not-allowed disabled:opacity-70"
               >
-                {isSubmitting ? "Versturen..." : "Verstuur bericht"}
+                {isSubmitting ? "Versturen..." : "Offerte aanvragen"}
               </button>
               <p className="text-xs text-slate-500">
                 Door dit formulier te versturen geeft u toestemming om
@@ -283,11 +284,19 @@ export default function ContactPage() {
             </p>
             <p className="text-sm">
               <span className="text-slate-500">Telefoon:</span>{" "}
+              <a href={TEL_HREF} className="font-semibold text-accent">
+                {PHONE_DISPLAY}
+              </a>
+            </p>
+            <p className="text-sm">
+              <span className="text-slate-500">WhatsApp:</span>{" "}
               <a
-                href="tel:+31658719011"
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noreferrer"
                 className="font-semibold text-accent"
               >
-                +31 6 58 71 90 11
+                Stuur een bericht
               </a>
             </p>
             <p className="text-sm">

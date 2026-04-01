@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
+import { PHONE_DISPLAY, TEL_HREF } from "@/lib/company";
 
 type CTAProps = {
   title?: string;
@@ -9,14 +10,14 @@ type CTAProps = {
 };
 
 export default function CTA({
-  title = "Heeft u een betrouwbare elektricien nodig?",
+  title = "Offerte op maat voor uw installatie?",
   description = (
     <>
-      Neem vandaag nog contact op voor een vrijblijvende offerte of een
-      kennismakingsgesprek. Wij denken graag met u mee.
+      Vraag een vrijblijvende offerte aan. Wij werken met vaste prijs per
+      opdracht — gericht op een veilig en deugdelijk eindresultaat.
     </>
   ),
-  buttonLabel = "Vraag een offerte aan",
+  buttonLabel = "Offerte aanvragen",
   href = "/contact"
 }: CTAProps) {
   return (
@@ -25,7 +26,7 @@ export default function CTA({
         <div className="card flex flex-col items-start justify-between gap-6 bg-primary px-6 py-8 text-white shadow-soft transition-shadow duration-300 hover:shadow-xl sm:px-10 sm:py-10 md:flex-row md:items-center">
           <div className="max-w-xl space-y-2">
             <p className="text-xs font-semibold uppercase tracking-widest text-accent">
-              Direct een vakman inschakelen
+              Zelfstandig installatiebedrijf
             </p>
             <h2 className="font-heading text-3xl font-bold md:text-4xl">
               {title}
@@ -40,9 +41,9 @@ export default function CTA({
               {buttonLabel}
             </Link>
             <p className="text-sm text-slate-300">
-              Liever direct iemand spreken?{" "}
-              <a href="tel:+31658719011" className="font-semibold text-accent">
-                Bel +31 6 58 71 90 11
+              Liever direct contact?{" "}
+              <a href={TEL_HREF} className="font-semibold text-accent">
+                Bel {PHONE_DISPLAY}
               </a>
             </p>
           </div>
@@ -51,4 +52,3 @@ export default function CTA({
     </section>
   );
 }
-

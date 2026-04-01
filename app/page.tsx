@@ -3,44 +3,46 @@ import Image from "next/image";
 import Link from "next/link";
 import CTA from "@/components/CTA";
 import { getHeroImageSrc, getProjectImages } from "@/lib/projectImages";
+import { PHONE_DISPLAY, TEL_HREF } from "@/lib/company";
 
 export const metadata: Metadata = {
   title: "Elektricien voor woningen & bedrijven in Nederland",
   description:
-    "Professionele elektricien met 20+ jaar ervaring: groepenkast vervangen, storingen verhelpen, nieuwbouw en verlichting. 200+ tevreden klanten. Vraag vandaag nog een vrijblijvende offerte aan.",
+    "Zelfstandig installatiebedrijf gespecialiseerd in elektrotechniek: groepenkast, storingen, bekabeling, verlichting, nieuwbouw en renovatie. Offerte op maat en vaste prijs per opdracht.",
   keywords: [
     "elektricien",
+    "elektrotechnische installaties",
     "groepenkast vervangen",
     "storing oplossen",
     "elektrotechniek Nederland"
   ],
   alternates: { canonical: "/" },
   openGraph: {
-    title: "De Elektricien | Professionele elektricien voor woning & bedrijf",
+    title: "De Elektricien | Elektrotechniek voor woning & bedrijf",
     description:
-      "20+ jaar ervaring. Groepenkasten, storingen, nieuwbouw, verlichting. Vraag een vrijblijvende offerte aan.",
+      "Elektrotechnische installaties op basis van aangenomen werk — veilig eindresultaat, duidelijke offerte.",
     url: "https://www.de-elektricien.nl"
   }
 };
 
 const servicePreview = [
   {
-    title: "Groepenkast vervangen",
+    title: "Elektrotechnische installaties",
     description:
-      "Veilige, toekomstbestendige groepenkasten met voldoende capaciteit voor uw woning of bedrijf.",
+      "Complete elektrotechnische werkzaamheden voor woning en bedrijf, afgestemd op uw situatie en de geldende normen.",
+    href: "/diensten#elektrotechniek"
+  },
+  {
+    title: "Groepenkast vervangen & uitbreiden",
+    description:
+      "Veilige, toekomstbestendige groepenkasten met voldoende capaciteit voor uw installatie.",
     href: "/diensten#groepenkast"
   },
   {
-    title: "Storingen & onderhoud",
+    title: "Storingen oplossen",
     description:
-      "Snelle diagnose en veilige oplossingen bij stroomstoringen, kortsluiting en andere defecten.",
+      "Snelle diagnose en veilige oplossingen bij stroomstoringen en defecten in de installatie.",
     href: "/diensten#storingen"
-  },
-  {
-    title: "Nieuwbouw & renovatie",
-    description:
-      "Complete elektrotechnische installaties voor nieuwbouw- en renovatieprojecten, van ontwerp tot oplevering.",
-    href: "/diensten#nieuwbouw"
   }
 ];
 
@@ -54,25 +56,26 @@ export default function HomePage() {
         <div className="container-width grid gap-10 md:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)] md:items-center">
           <div className="space-y-6 opacity-0 animate-fade-in">
             <div className="badge bg-white text-xs font-semibold text-primary shadow-soft">
-              20+ jaar ervaring in elektrotechniek
+              Zelfstandig installatiebedrijf · elektrotechniek
             </div>
             <div className="space-y-4">
               <h1 className="font-heading text-5xl font-extrabold text-primary md:text-6xl">
-                Professionele Elektricien voor Woningen &amp; Bedrijven
+                Elektrotechniek voor woningen &amp; bedrijven
               </h1>
               <p className="max-w-xl text-slate-600">
-                Meer dan 20 jaar ervaring in veilige en betrouwbare
-                elektrotechnische installaties. Van groepenkasten en
-                storingsdienst tot complete nieuwbouwprojecten.
+                Wij zijn een zelfstandig installatiebedrijf gespecialiseerd in
+                elektrotechnische installaties voor woningen en bedrijven. Wij
+                voeren werkzaamheden uit op basis van aangenomen werk en leveren
+                een compleet en veilig eindresultaat.
               </p>
             </div>
 
             <ul className="grid gap-3 text-slate-600 sm:grid-cols-2">
               {[
-                "20+ jaar ervaring",
-                "200+ tevreden klanten",
-                "150+ projecten afgerond",
-                "Snelle service & transparante prijzen"
+                "Offerte op maat",
+                "Vaste prijs per opdracht",
+                "Resultaatgericht — geen uurtarief als loonconstructie",
+                "Duidelijke planning en oplevering"
               ].map((item) => (
                 <li key={item} className="flex items-start gap-2">
                   <span className="mt-0.5 text-success">✔</span>
@@ -86,10 +89,10 @@ export default function HomePage() {
                 <span className="text-success">✔</span> Gecertificeerd vakwerk
               </li>
               <li className="flex items-center gap-1.5">
-                <span className="text-success">✔</span> 100% klanttevredenheid
+                <span className="text-success">✔</span> Veilig volgens NEN-normen
               </li>
               <li className="flex items-center gap-1.5">
-                <span className="text-success">✔</span> Veilig volgens NEN-normen
+                <span className="text-success">✔</span> 200+ tevreden klanten
               </li>
             </ul>
 
@@ -98,13 +101,13 @@ export default function HomePage() {
                 href="/contact"
                 className="inline-flex items-center justify-center rounded-full bg-accent px-8 py-4 text-base font-bold text-white shadow-soft transition-all duration-300 hover:bg-accent/90 hover:text-white"
               >
-                Vraag offerte aan
+                Offerte aanvragen
               </Link>
               <a
-                href="tel:+31658719011"
+                href={TEL_HREF}
                 className="btn-secondary rounded-full text-base"
               >
-                Bel direct +31 6 58 71 90 11
+                Bel {PHONE_DISPLAY}
               </a>
             </div>
           </div>
@@ -113,7 +116,7 @@ export default function HomePage() {
             {heroImageSrc && (
               <Image
                 src={heroImageSrc}
-                alt="Elektricien aan het werk op een project"
+                alt="Elektricien aan het werk aan een elektrotechnische installatie"
                 fill
                 priority
                 sizes="(max-width: 768px) 100vw, 50vw"
@@ -133,7 +136,7 @@ export default function HomePage() {
                 Diensten
               </p>
               <h2 className="font-heading text-3xl font-bold text-primary md:text-4xl">
-                Dit kunnen wij voor u betekenen
+                Wat wij voor u kunnen doen
               </h2>
             </div>
             <Link
@@ -153,9 +156,7 @@ export default function HomePage() {
                 <h3 className="font-heading text-xl font-bold text-primary">
                   {service.title}
                 </h3>
-                <p className="mt-3 text-slate-600">
-                  {service.description}
-                </p>
+                <p className="mt-3 text-slate-600">{service.description}</p>
                 <Link
                   href={service.href as any}
                   className="mt-4 inline-flex font-semibold text-accent transition-colors duration-300 hover:text-accent/80"
@@ -181,9 +182,9 @@ export default function HomePage() {
                 Een indruk van ons werk
               </h2>
               <p className="mt-2 max-w-xl text-slate-600">
-                Van bedrijfshallen en kantoren tot woningen en tuinverlichting:
-                De Elektricien verzorgt veilige en nette installaties met oog
-                voor detail.
+                Van bedrijfshallen en kantoren tot woningen en verlichting: wij
+                realiseren veilige elektrotechnische installaties met oog voor
+                detail.
               </p>
             </div>
             <Link
@@ -202,7 +203,7 @@ export default function HomePage() {
               >
                 <Image
                   src={image.src}
-                  alt={`Project ${image.filename} uitgevoerd door De Elektricien`}
+                  alt={`Elektrotechnisch project ${image.filename} — De Elektricien`}
                   fill
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   className="object-cover transition-transform duration-300 group-hover:scale-105"
@@ -216,4 +217,3 @@ export default function HomePage() {
     </>
   );
 }
-

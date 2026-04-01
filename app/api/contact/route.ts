@@ -9,6 +9,7 @@ import type { NextRequest } from "next/server";
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 import { z } from "zod";
+import { PHONE_DISPLAY, PHONE_E164, TEL_HREF } from "@/lib/company";
 
 const contactSchema = z.object({
   naam: z.string().min(2, "Naam moet minimaal 2 tekens zijn."),
@@ -66,7 +67,6 @@ function recordRateLimit(ip: string): void {
 }
 
 const ADMIN_EMAIL = "algemeen@de-elektricien.nl";
-const PHONE = "+31 6 58 71 90 11";
 
 function buildAdminHtml(data: {
   naam: string;
@@ -111,12 +111,12 @@ function buildConfirmationHtml(naam: string): string {
   <div style="max-width:560px;margin:0 auto;background:#fff;padding:32px;border-radius:16px;box-shadow:0 18px 45px rgba(15,23,42,0.08);">
     <div style="background:#0F172A;color:#fff;padding:20px;border-radius:12px;text-align:center;margin-bottom:24px;">
       <h1 style="margin:0;font-size:20px;font-weight:700;">De Elektricien</h1>
-      <p style="margin:4px 0 0;font-size:13px;opacity:0.9;">Sterk in elektra werk</p>
+      <p style="margin:4px 0 0;font-size:13px;opacity:0.9;">Elektrotechnische installaties</p>
     </div>
     <p style="margin:0 0 16px;color:#334155;line-height:1.6;">Beste ${escapeHtml(naam)},</p>
     <p style="margin:0 0 16px;color:#334155;line-height:1.6;">Bedankt voor uw aanvraag. Wij hebben uw bericht in goede orde ontvangen.</p>
     <p style="margin:0 0 16px;color:#334155;line-height:1.6;">Wij nemen binnen 24 uur contact met u op om de mogelijkheden te bespreken.</p>
-    <p style="margin:24px 0 0;color:#64748b;font-size:14px;">Heeft u direct een vraag? Bel ons: <a href="tel:+31658719011" style="color:#06B6D4;font-weight:600;">${PHONE}</a></p>
+    <p style="margin:24px 0 0;color:#64748b;font-size:14px;">Heeft u direct een vraag? Bel ons: <a href="${TEL_HREF}" style="color:#06B6D4;font-weight:600;">${PHONE_DISPLAY} (${PHONE_E164})</a></p>
     <p style="margin:24px 0 0;color:#94a3b8;font-size:12px;">De Elektricien · www.de-elektricien.nl</p>
   </div>
 </body>

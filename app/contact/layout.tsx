@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Contact | Offerte aanvragen bij De Elektricien",
   description:
-    "Vraag een vrijblijvende offerte aan. Neem contact op voor elektrotechnische werkzaamheden: groepenkast, storingen, nieuwbouw, verlichting. Snel antwoord.",
+    "Vraag een offerte op maat aan voor elektrotechnische werkzaamheden. Bel 06-16538949 of gebruik het formulier. Vaste prijs per opdracht waar mogelijk.",
   keywords: [
     "elektricien",
     "groepenkast vervangen",
@@ -13,7 +13,8 @@ export const metadata: Metadata = {
   alternates: { canonical: "/contact" },
   openGraph: {
     title: "Contact | De Elektricien",
-    description: "Vraag een offerte aan. Bel +31 6 58 71 90 11 of stuur een bericht.",
+    description:
+      "Offerte aanvragen. Bel 06-16538949, WhatsApp of stuur een bericht via het formulier.",
     url: "https://www.de-elektricien.nl/contact"
   }
 };

@@ -130,10 +130,10 @@ export default function JuridischeKennisgevingPage() {
               verstrekt zonder noodzaak of toestemming. Meer informatie vindt u
               in ons{" "}
               <a
-                href="/privacybeleid"
+                href="/privacyverklaring"
                 className="text-accent underline-offset-4 hover:underline"
               >
-                privacybeleid
+                privacyverklaring
               </a>
               .
             </p>

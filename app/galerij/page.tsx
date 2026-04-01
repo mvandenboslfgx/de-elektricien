@@ -3,9 +3,9 @@ import GalleryWithLightbox from "@/components/GalleryWithLightbox";
 import { getProjectImages } from "@/lib/projectImages";
 
 export const metadata: Metadata = {
-  title: "Projectgalerij | Voorbeelden van elektrotechnische projecten",
+  title: "Projectgalerij | Elektrotechnische projecten",
   description:
-    "Bekijk onze uitgevoerde projecten: groepenkasten, verlichting, nieuwbouw en bedrijfsinstallaties. De Elektricien – vakwerk dat u kunt vertrouwen.",
+    "Bekijk uitgevoerde elektrotechnische projecten: groepenkasten, verlichting, nieuwbouw en bedrijfsinstallaties. De Elektricien — veilig vakwerk.",
   keywords: [
     "elektricien",
     "groepenkast vervangen",
@@ -36,7 +36,7 @@ export default function GalerijPage() {
           <p className="max-w-2xl text-slate-600">
             In deze galerij ziet u een greep uit de projecten die wij de
             afgelopen jaren hebben gerealiseerd. Van groepenkasten en
-            bedrijfsinstallaties tot tuinverlichting en afmontage in woningen.
+            bedrijfsinstallaties tot tuinverlichting en complete elektra in woningen.
             Klik op een afbeelding om te vergroten.
           </p>
         </div>
